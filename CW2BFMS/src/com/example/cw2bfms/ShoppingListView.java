@@ -14,7 +14,7 @@ public class ShoppingListView implements ActionListener {
     private JFrame frame = new JFrame();
     private JLabel listLabel = new JLabel();
     private JList<String> itemList;
-    private DefaultListModel<String> itemModel;
+    DefaultListModel<String> itemModel;
     private JButton backButton = new JButton("Back");
     private JButton addItemButton = new JButton("Add Item");
     private JButton completeButton = new JButton("Complete");
