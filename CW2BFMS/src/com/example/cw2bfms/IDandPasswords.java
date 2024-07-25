@@ -2,6 +2,11 @@ package com.example.cw2bfms;
 
 import java.util.HashMap;
 
+/**
+ * Manages user IDs and passwords.
+ */
+
+
 public class IDandPasswords {
 	
 	private HashMap<String, String> logininfo = new HashMap<>();

@@ -12,6 +12,10 @@ import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+/**
+ * Handles the login interface and process.
+ */
+
 public class LoginPage implements ActionListener {
 
     JFrame frame = new JFrame();

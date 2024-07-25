@@ -5,19 +5,22 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Displays a welcome message and navigates to different management functions.
+ */
 public class WelcomePage implements ActionListener {
 
-    JFrame frame = new JFrame();
-    JLabel welcomeLabel = new JLabel();
-    JButton calendarButton = new JButton("Add Event");
-    JButton viewCalendarButton = new JButton("View Events");
-    JButton manageTasksButton = new JButton("Manage Tasks");
-
+    private JFrame frame = new JFrame();
+    private JLabel welcomeLabel = new JLabel();
+    private JButton calendarButton = new JButton("Add Event");
+    private JButton viewCalendarButton = new JButton("View Events");
+    private JButton manageTasksButton = new JButton("Manage Tasks");
+    private JButton shoppingListsButton = new JButton("Shopping Lists");
     private String userID;
 
-    WelcomePage(String userID) {
+    public WelcomePage(String userID) {
         this.userID = userID;
-        
+
         String welcomeMessage = "Hello, Welcome to the Beecham Family Management System!";
         String userGreeting = "Hello " + userID + ", your login was successful!";
 
@@ -38,14 +41,18 @@ public class WelcomePage implements ActionListener {
         manageTasksButton.setBounds(50, 250, 200, 35);
         manageTasksButton.addActionListener(this);
 
+        shoppingListsButton.setBounds(50, 300, 200, 35);
+        shoppingListsButton.addActionListener(this);
+
         frame.add(greetingLabel);
         frame.add(welcomeLabel);
         frame.add(calendarButton);
         frame.add(viewCalendarButton);
         frame.add(manageTasksButton);
+        frame.add(shoppingListsButton);
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(800, 400);
+        frame.setSize(800, 500);
         frame.setLayout(null);
         frame.setVisible(true);
     }
@@ -54,13 +61,16 @@ public class WelcomePage implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == calendarButton) {
             frame.dispose();
-            new CalendarView(userID); // Pass userID to CalendarView
+            new CalendarView(userID); 
         } else if (e.getSource() == viewCalendarButton) {
             frame.dispose();
-            new CalendarDisplay(userID); // Pass userID to CalendarDisplay
+            new CalendarDisplay(userID); 
         } else if (e.getSource() == manageTasksButton) {
             frame.dispose();
-            new TaskView(userID); // Pass userID to TaskView
+            new TaskView(userID); 
+        } else if (e.getSource() == shoppingListsButton) {
+            frame.dispose();
+            new ShoppingLists(userID);
         }
     }
 }

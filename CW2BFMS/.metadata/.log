@@ -1,0 +1,94 @@
+!SESSION 2024-07-25 11:09:00.768 -----------------------------------------------
+eclipse.buildId=4.31.0.20240307-1200
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=macosx, ARCH=aarch64, WS=cocoa, NL=en_MT
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/costa911/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch aarch64 -product org.eclipse.epp.package.java.product -keyring /Users/costa911/.eclipse_keyring
+
+!ENTRY ch.qos.logback.classic 1 0 2024-07-25 11:09:01.727
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2024-07-25 11:09:26.824
+!MESSAGE Logback config file: /Users/costa911/git/repository/CW2BFMS/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.6.0.20240217-1525.xml
+
+!ENTRY org.eclipse.mylyn.github.ui 4 0 2024-07-25 11:10:44.092
+!MESSAGE Clone operation failed, with failed cleanup: Could not delete file /Users/costa911/git/costa911/CW2BFMS. Manual cleanup may be required.
+!STACK 0
+java.lang.reflect.InvocationTargetException: Clone operation failed, with failed cleanup: Could not delete file /Users/costa911/git/costa911/CW2BFMS. Manual cleanup may be required.
+	at org.eclipse.egit.core.op.CloneOperation.run(CloneOperation.java:212)
+	at org.eclipse.mylyn.internal.github.ui.RepositoryImportWizard$1.run(RepositoryImportWizard.java:120)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.eclipse.jgit.api.errors.TransportException: Remote branch 'refs/heads/master' not found in upstream origin
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:249)
+	at org.eclipse.jgit.api.CloneCommand.fetch(CloneCommand.java:319)
+	at org.eclipse.jgit.api.CloneCommand.call(CloneCommand.java:189)
+	at org.eclipse.egit.core.op.CloneOperation.run(CloneOperation.java:194)
+	... 2 more
+Caused by: org.eclipse.jgit.errors.TransportException: Remote branch 'refs/heads/master' not found in upstream origin
+	at org.eclipse.jgit.transport.FetchProcess.executeImp(FetchProcess.java:157)
+	at org.eclipse.jgit.transport.FetchProcess.execute(FetchProcess.java:105)
+	at org.eclipse.jgit.transport.Transport.fetch(Transport.java:1482)
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:238)
+	... 5 more
+Root exception:
+org.eclipse.jgit.api.errors.TransportException: Remote branch 'refs/heads/master' not found in upstream origin
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:249)
+	at org.eclipse.jgit.api.CloneCommand.fetch(CloneCommand.java:319)
+	at org.eclipse.jgit.api.CloneCommand.call(CloneCommand.java:189)
+	at org.eclipse.egit.core.op.CloneOperation.run(CloneOperation.java:194)
+	at org.eclipse.mylyn.internal.github.ui.RepositoryImportWizard$1.run(RepositoryImportWizard.java:120)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.eclipse.jgit.errors.TransportException: Remote branch 'refs/heads/master' not found in upstream origin
+	at org.eclipse.jgit.transport.FetchProcess.executeImp(FetchProcess.java:157)
+	at org.eclipse.jgit.transport.FetchProcess.execute(FetchProcess.java:105)
+	at org.eclipse.jgit.transport.Transport.fetch(Transport.java:1482)
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:238)
+	... 5 more
+
+!ENTRY org.eclipse.mylyn.github.ui 4 0 2024-07-25 11:11:24.881
+!MESSAGE Clone operation failed, with failed cleanup: Could not delete file /Users/costa911/git/costa911/CW2BFMS. Manual cleanup may be required.
+!STACK 0
+java.lang.reflect.InvocationTargetException: Clone operation failed, with failed cleanup: Could not delete file /Users/costa911/git/costa911/CW2BFMS. Manual cleanup may be required.
+	at org.eclipse.egit.core.op.CloneOperation.run(CloneOperation.java:212)
+	at org.eclipse.mylyn.internal.github.ui.RepositoryImportWizard$1.run(RepositoryImportWizard.java:120)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.eclipse.jgit.api.errors.TransportException: Remote branch 'refs/heads/master' not found in upstream origin
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:249)
+	at org.eclipse.jgit.api.CloneCommand.fetch(CloneCommand.java:319)
+	at org.eclipse.jgit.api.CloneCommand.call(CloneCommand.java:189)
+	at org.eclipse.egit.core.op.CloneOperation.run(CloneOperation.java:194)
+	... 2 more
+Caused by: org.eclipse.jgit.errors.TransportException: Remote branch 'refs/heads/master' not found in upstream origin
+	at org.eclipse.jgit.transport.FetchProcess.executeImp(FetchProcess.java:157)
+	at org.eclipse.jgit.transport.FetchProcess.execute(FetchProcess.java:105)
+	at org.eclipse.jgit.transport.Transport.fetch(Transport.java:1482)
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:238)
+	... 5 more
+Root exception:
+org.eclipse.jgit.api.errors.TransportException: Remote branch 'refs/heads/master' not found in upstream origin
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:249)
+	at org.eclipse.jgit.api.CloneCommand.fetch(CloneCommand.java:319)
+	at org.eclipse.jgit.api.CloneCommand.call(CloneCommand.java:189)
+	at org.eclipse.egit.core.op.CloneOperation.run(CloneOperation.java:194)
+	at org.eclipse.mylyn.internal.github.ui.RepositoryImportWizard$1.run(RepositoryImportWizard.java:120)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.eclipse.jgit.errors.TransportException: Remote branch 'refs/heads/master' not found in upstream origin
+	at org.eclipse.jgit.transport.FetchProcess.executeImp(FetchProcess.java:157)
+	at org.eclipse.jgit.transport.FetchProcess.execute(FetchProcess.java:105)
+	at org.eclipse.jgit.transport.Transport.fetch(Transport.java:1482)
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:238)
+	... 5 more
+!SESSION 2024-07-25 11:16:24.313 -----------------------------------------------
+eclipse.buildId=4.31.0.20240307-1200
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=macosx, ARCH=aarch64, WS=cocoa, NL=en_MT
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/costa911/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch aarch64 -product org.eclipse.epp.package.java.product -keyring /Users/costa911/.eclipse_keyring
+
+!ENTRY ch.qos.logback.classic 1 0 2024-07-25 11:16:25.215
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2024-07-25 11:16:29.991
+!MESSAGE Logback config file: /Users/costa911/git/repository/CW2BFMS/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.6.0.20240217-1525.xml

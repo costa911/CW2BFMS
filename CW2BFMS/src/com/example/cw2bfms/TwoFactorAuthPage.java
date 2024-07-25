@@ -9,6 +9,10 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+/**
+ * Handles the two-factor authentication interface and process.
+ */
+
 public class TwoFactorAuthPage implements ActionListener {
 
     JFrame frame = new JFrame();
