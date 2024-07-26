@@ -52,14 +52,17 @@ public class ShoppingListView implements ActionListener {
 
         backButton.setBounds(50, 280, 100, 25);
         backButton.addActionListener(this);
+        backButton.setToolTipText("Click to return to the shopping lists.");
 
         addItemButton.setBounds(170, 280, 100, 25);
         addItemButton.addActionListener(this);
         addItemButton.setEnabled(!isCompleted);
+        addItemButton.setToolTipText("Click to add a new item to the shopping list.");
 
         completeButton.setBounds(290, 280, 100, 25);
         completeButton.addActionListener(this);
         completeButton.setEnabled(!isCompleted);
+        completeButton.setToolTipText("Click to mark the shopping list as completed.");
 
         frame.add(listLabel);
         frame.add(itemList);

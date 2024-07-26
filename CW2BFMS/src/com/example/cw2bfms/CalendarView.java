@@ -21,8 +21,6 @@ public class CalendarView implements ActionListener {
     public CalendarView(String userID) {
         this.userID = userID;
 
-        // Set setup frame and components
-
         // Set up frame
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(800, 600);
@@ -32,33 +30,36 @@ public class CalendarView implements ActionListener {
         JLabel dateLabel = new JLabel("Date (YYYY-MM-DD):");
         dateLabel.setBounds(10, 10, 200, 25);
         dateField.setBounds(210, 10, 200, 25);
-
+        
         JLabel titleLabel = new JLabel("Event Title:");
         titleLabel.setBounds(10, 40, 200, 25);
         titleField.setBounds(210, 40, 200, 25);
-
+        
         JLabel descriptionLabel = new JLabel("Event Description:");
         descriptionLabel.setBounds(10, 70, 200, 25);
         descriptionField.setBounds(210, 70, 200, 25);
-
+        
         addButton.setBounds(10, 100, 400, 25);
         addButton.addActionListener(this);
-
+        addButton.setToolTipText("Click to add the event with the provided details.");
+        
         JLabel deleteLabel = new JLabel("Event ID to Delete:");
         deleteLabel.setBounds(10, 130, 200, 25);
         deleteField.setBounds(210, 130, 200, 25);
-
+        
         deleteButton.setBounds(10, 160, 400, 25);
         deleteButton.addActionListener(this);
-
+        deleteButton.setToolTipText("Click to delete the event with the specified ID.");
+        
         eventListArea.setBounds(10, 200, 760, 300);
         eventListArea.setEditable(false);
-
+        
         backButton.setBounds(10, 510, 100, 25);
         backButton.addActionListener(e -> {
             frame.dispose();
             new WelcomePage(userID); // Pass userID back to WelcomePage
         });
+        backButton.setToolTipText("Click to return to the welcome page.");
 
         // Add components to frame
         frame.add(dateLabel);
@@ -75,7 +76,6 @@ public class CalendarView implements ActionListener {
         frame.add(backButton);
 
         frame.setVisible(true);
-
         updateEventList();
     }
 

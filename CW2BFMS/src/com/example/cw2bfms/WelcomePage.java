@@ -5,71 +5,80 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-/**
- * Displays a welcome message and navigates to different management functions.
- */
 public class WelcomePage implements ActionListener {
 
-    private JFrame frame = new JFrame();
-    private JLabel welcomeLabel = new JLabel();
-    private JButton calendarButton = new JButton("Add Event");
-    private JButton viewCalendarButton = new JButton("View Events");
-    private JButton manageTasksButton = new JButton("Manage Tasks");
-    private JButton shoppingListsButton = new JButton("Shopping Lists");
+    private JFrame frame;
+    JLabel welcomeLabel;
+    JButton calendarButton;
+    JButton viewCalendarButton;
+    JButton manageTasksButton;
+    JButton shoppingListsButton;
     private String userID;
 
     public WelcomePage(String userID) {
         this.userID = userID;
 
-        String welcomeMessage = "Hello, Welcome to the Beecham Family Management System!";
-        String userGreeting = "Hello " + userID + ", your login was successful!";
+        frame = new JFrame("Beecham Family Management System");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(600, 400);
+        frame.setLayout(new GridBagLayout());
 
-        welcomeLabel.setText(userGreeting);
-        welcomeLabel.setBounds(50, 50, 600, 35);
-        welcomeLabel.setFont(new Font("Arial", Font.PLAIN, 25));
+        // Create and style components
+        welcomeLabel = new JLabel("Hello " + userID + ", your login was successful!", SwingConstants.CENTER);
+        welcomeLabel.setFont(new Font("Arial", Font.BOLD, 16));
 
-        JLabel greetingLabel = new JLabel(welcomeMessage);
-        greetingLabel.setBounds(50, 100, 600, 35);
-        greetingLabel.setFont(new Font("Arial", Font.PLAIN, 20));
+        calendarButton = new JButton("Add Event");
+        viewCalendarButton = new JButton("View Events");
+        manageTasksButton = new JButton("Manage Tasks");
+        shoppingListsButton = new JButton("Shopping Lists");
 
-        calendarButton.setBounds(50, 150, 200, 35);
+        // Set tooltips for better user understanding
+        calendarButton.setToolTipText("Click to add a new event to the calendar.");
+        viewCalendarButton.setToolTipText("Click to view existing events.");
+        manageTasksButton.setToolTipText("Click to manage tasks for family members.");
+        shoppingListsButton.setToolTipText("Click to manage shopping lists.");
+
+        // Using GridBagLayout for flexible layout management
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.insets = new Insets(10, 10, 10, 10);
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.anchor = GridBagConstraints.CENTER; // Center components
+
+        // Add components to the frame
+        frame.add(new JLabel("Welcome to the Beecham Family Management System!", SwingConstants.CENTER), gbc);
+        gbc.gridy++;
+        frame.add(welcomeLabel, gbc);
+        gbc.gridy++;
+        frame.add(calendarButton, gbc);
+        gbc.gridy++;
+        frame.add(viewCalendarButton, gbc);
+        gbc.gridy++;
+        frame.add(manageTasksButton, gbc);
+        gbc.gridy++;
+        frame.add(shoppingListsButton, gbc);
+
+        // Add action listeners
         calendarButton.addActionListener(this);
-
-        viewCalendarButton.setBounds(50, 200, 200, 35);
         viewCalendarButton.addActionListener(this);
-
-        manageTasksButton.setBounds(50, 250, 200, 35);
         manageTasksButton.addActionListener(this);
-
-        shoppingListsButton.setBounds(50, 300, 200, 35);
         shoppingListsButton.addActionListener(this);
 
-        frame.add(greetingLabel);
-        frame.add(welcomeLabel);
-        frame.add(calendarButton);
-        frame.add(viewCalendarButton);
-        frame.add(manageTasksButton);
-        frame.add(shoppingListsButton);
-
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(800, 500);
-        frame.setLayout(null);
+        // Center the frame on the screen
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        frame.dispose();
         if (e.getSource() == calendarButton) {
-            frame.dispose();
-            new CalendarView(userID); 
+            new CalendarView(userID);
         } else if (e.getSource() == viewCalendarButton) {
-            frame.dispose();
-            new CalendarDisplay(userID); 
+            new CalendarDisplay(userID);
         } else if (e.getSource() == manageTasksButton) {
-            frame.dispose();
-            new TaskView(userID); 
+            new TaskView(userID);
         } else if (e.getSource() == shoppingListsButton) {
-            frame.dispose();
             new ShoppingLists(userID);
         }
     }
