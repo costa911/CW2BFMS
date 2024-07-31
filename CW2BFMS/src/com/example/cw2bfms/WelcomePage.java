@@ -16,9 +16,11 @@ public class WelcomePage implements ActionListener {
     JButton notificationSettingsButton; // New button for Notification Settings
     JButton notificationActivityButton; // New button for Notification Activity
     private String userID;
+    private NotificationManager notificationManager; // Add NotificationManager instance
 
     public WelcomePage(String userID) {
         this.userID = userID;
+        this.notificationManager = new NotificationManager(); // Initialize NotificationManager
 
         frame = new JFrame("Beecham Family Management System");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -83,19 +85,24 @@ public class WelcomePage implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        frame.dispose();
         if (e.getSource() == calendarButton) {
-            new CalendarView(userID);
+            frame.dispose();
+            new CalendarView(userID); // Pass NotificationManager to CalendarView
         } else if (e.getSource() == viewCalendarButton) {
+            frame.dispose();
             new CalendarDisplay(userID);
         } else if (e.getSource() == manageTasksButton) {
+            frame.dispose();
             new TaskView(userID);
         } else if (e.getSource() == shoppingListsButton) {
+            frame.dispose();
             new ShoppingLists(userID);
         } else if (e.getSource() == notificationSettingsButton) {
+            frame.dispose();
             new NotificationSettings(userID); // Open Notification Settings
         } else if (e.getSource() == notificationActivityButton) {
-            new NotificationActivity(userID); // Open Notification Activity
+            frame.dispose();
+            new NotificationActivity(notificationManager, userID); // Pass NotificationManager to NotificationActivity
         }
     }
 }
