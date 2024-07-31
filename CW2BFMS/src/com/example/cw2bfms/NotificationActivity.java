@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class NotificationActivity {
-    private JFrame frame;
+    JFrame frame;
 
     public NotificationActivity(NotificationManager notificationManager, String userID) {
         frame = new JFrame("Notification Activity");
