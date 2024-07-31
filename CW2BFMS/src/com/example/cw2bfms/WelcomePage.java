@@ -13,6 +13,8 @@ public class WelcomePage implements ActionListener {
     JButton viewCalendarButton;
     JButton manageTasksButton;
     JButton shoppingListsButton;
+    JButton notificationSettingsButton; // New button for Notification Settings
+    JButton notificationActivityButton; // New button for Notification Activity
     private String userID;
 
     public WelcomePage(String userID) {
@@ -31,12 +33,16 @@ public class WelcomePage implements ActionListener {
         viewCalendarButton = new JButton("View Events");
         manageTasksButton = new JButton("Manage Tasks");
         shoppingListsButton = new JButton("Shopping Lists");
+        notificationSettingsButton = new JButton("Notification Settings"); // Initialize new button
+        notificationActivityButton = new JButton("Notification Activity"); // Initialize new button
 
         // Set tooltips for better user understanding
         calendarButton.setToolTipText("Click to add a new event to the calendar.");
         viewCalendarButton.setToolTipText("Click to view existing events.");
         manageTasksButton.setToolTipText("Click to manage tasks for family members.");
         shoppingListsButton.setToolTipText("Click to manage shopping lists.");
+        notificationSettingsButton.setToolTipText("Click to customize notification preferences."); // Tooltip for new button
+        notificationActivityButton.setToolTipText("Click to view notification activity."); // Tooltip for new button
 
         // Using GridBagLayout for flexible layout management
         GridBagConstraints gbc = new GridBagConstraints();
@@ -57,12 +63,18 @@ public class WelcomePage implements ActionListener {
         frame.add(manageTasksButton, gbc);
         gbc.gridy++;
         frame.add(shoppingListsButton, gbc);
+        gbc.gridy++;
+        frame.add(notificationSettingsButton, gbc); // Add new button to frame
+        gbc.gridy++;
+        frame.add(notificationActivityButton, gbc); // Add new button to frame
 
         // Add action listeners
         calendarButton.addActionListener(this);
         viewCalendarButton.addActionListener(this);
         manageTasksButton.addActionListener(this);
         shoppingListsButton.addActionListener(this);
+        notificationSettingsButton.addActionListener(this); // Action listener for new button
+        notificationActivityButton.addActionListener(this); // Action listener for new button
 
         // Center the frame on the screen
         frame.setLocationRelativeTo(null);
@@ -80,6 +92,10 @@ public class WelcomePage implements ActionListener {
             new TaskView(userID);
         } else if (e.getSource() == shoppingListsButton) {
             new ShoppingLists(userID);
+        } else if (e.getSource() == notificationSettingsButton) {
+            new NotificationSettings(userID); // Open Notification Settings
+        } else if (e.getSource() == notificationActivityButton) {
+            new NotificationActivity(userID); // Open Notification Activity
         }
     }
 }
