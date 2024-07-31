@@ -96,7 +96,7 @@ public class WelcomePage implements ActionListener {
             new TaskView(userID);
         } else if (e.getSource() == shoppingListsButton) {
             frame.dispose();
-            new ShoppingLists(userID);
+            new ShoppingLists(userID, notificationManager);
         } else if (e.getSource() == notificationSettingsButton) {
             frame.dispose();
             new NotificationSettings(userID); // Open Notification Settings

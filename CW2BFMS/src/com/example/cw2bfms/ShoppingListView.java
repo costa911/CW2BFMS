@@ -79,7 +79,7 @@ public class ShoppingListView implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == backButton) {
-            new ShoppingLists(userID);
+            new ShoppingLists(userID, null);
             frame.dispose();
         } else if (e.getSource() == addItemButton) {
             String newItem = JOptionPane.showInputDialog(frame, "Enter name for new item:");

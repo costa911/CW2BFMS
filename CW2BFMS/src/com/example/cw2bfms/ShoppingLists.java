@@ -24,13 +24,15 @@ public class ShoppingLists implements ActionListener {
     private String userID;
     private DefaultListModel<String> pendingModel;
     private DefaultListModel<String> completedModel;
+    private NotificationManager notificationManager; // Add NotificationManager instance
 
     // Static lists to persist data
     static Map<String, ArrayList<String>> pendingLists = new HashMap<>();
     static Map<String, ArrayList<String>> completedLists = new HashMap<>();
 
-    public ShoppingLists(String userID) {
+    public ShoppingLists(String userID, NotificationManager notificationManager) {
         this.userID = userID;
+        this.notificationManager = notificationManager; // Initialize NotificationManager
 
         // Initialize mock data for pending lists
         ArrayList<String> groceryItems = new ArrayList<>(Arrays.asList("Apples", "Milk", "Bread"));
@@ -113,6 +115,8 @@ public class ShoppingLists implements ActionListener {
             if (newListName != null && !newListName.trim().isEmpty()) {
                 pendingModel.addElement(newListName.trim());
                 pendingLists.put(newListName.trim(), new ArrayList<>());
+                // Add notification for the new shopping list
+                notificationManager.addNotification("New Shopping List Created: " + newListName.trim());
             }
         }
     }

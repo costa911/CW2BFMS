@@ -11,12 +11,24 @@ public class NotificationActivity {
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setSize(600, 400); // Increased bounds for better visibility
         frame.setLayout(new GridLayout(0, 1));
-        
+
+        // Retrieve notifications from NotificationManager and display them
+        for (String notification : notificationManager.getNotifications()) {
+            addNotificationPanel(notification);
+        }
+
         // Retrieve events from EventManager and display them
         EventManager eventManager = EventManager.getInstance();
         for (Event event : eventManager.getEvents()) {
             String eventNotification = event.getDate() + ": " + event.getTitle() + " - " + event.getDescription() + " [Pending]";
             addNotificationPanel(eventNotification);
+        }
+
+        // Retrieve tasks from TaskManager and display them
+        TaskManager taskManager = TaskManager.getInstance(); // Assuming you have a TaskManager
+        for (Task task : taskManager.getTasks()) {
+            String taskNotification = task.getDate() + ": " + task.getTitle() + " - " + task.getDescription() + " (Assigned to: " + task.getAssignedUser() + ") [Pending]";
+            addNotificationPanel(taskNotification);
         }
 
         // Example notifications
@@ -30,8 +42,6 @@ public class NotificationActivity {
         for (String notification : exampleNotifications) {
             addNotificationPanel(notification);
         }
-
-
 
         // Back Button
         JButton backButton = new JButton("Back");
