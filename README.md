@@ -11,4 +11,5 @@ The Beecham Family, a dynamic group of six with bustling schedules, aim to strea
 
 <div align="center">
     
-![Uploading Github ReadME.gif…]()
+
+![Github ReadME](https://github.com/user-attachments/assets/b0265650-0bbe-4e40-9031-4b3386ce6956)
