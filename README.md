@@ -7,8 +7,8 @@ Academic Project
 
 ### Coursework 2: The Beecham Family Management System
 
-The Beecham Family, a dynamic group of six with bustling schedules, aim to streamline their daily lives. The Beecham Family Management System (BFMS) is designed to enhance family communication, coordination, and organization. With BFMS, the Beecham family aims to simplify their routines and stay connected effortlessly.
+The Beecham Family, a dynamic group of six with bustling schedules, aim to streamline their daily lives. The Beecham Family Management System (BFMS) enhances family communication, coordination, and organization. With BFMS, the Beecham family aims to simplify their routines and stay connected effortlessly.
 
-
+![Uploading Github ReadME.gif…]()
 
 <div align="center">
